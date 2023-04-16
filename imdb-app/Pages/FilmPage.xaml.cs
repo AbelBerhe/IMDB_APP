@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IMDB.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,24 @@ namespace imdb_app.Pages
     /// </summary>
     public partial class FilmPage : Page
     {
+        private ImdbContext _context = new ImdbContext();
+        private CollectionViewSource filmViewSource;
+
         public FilmPage()
         {
             InitializeComponent();
+            filmViewSource = (CollectionViewSource)FindResource(nameof(filmViewSource));
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void filmSearch_btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

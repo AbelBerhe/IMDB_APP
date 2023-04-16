@@ -16,18 +16,18 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_Exit">
+                <MenuItem Header="_Exit" Click="Exit_Click">
 
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Go To">
-                <MenuItem Header="_Directors">
+                <MenuItem Header="_Directors" Click="director_btn_Click">
 
                 </MenuItem>
-                <MenuItem Header="_Films">
+                <MenuItem Header="_Films" Click="film_btn_Click">
 
                 </MenuItem>
-                <MenuItem Header="_Shorts">
+                <MenuItem Header="_Shorts" Click="shorts_btn_Click">
 
                 </MenuItem>
             </MenuItem>

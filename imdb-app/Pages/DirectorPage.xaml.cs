@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IMDB.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,23 @@ namespace imdb_app.Pages
     /// </summary>
     public partial class DirectorPage : Page
     {
+        private ImdbContext _context = new ImdbContext();
+        private CollectionViewSource directorViewSource;
         public DirectorPage()
         {
             InitializeComponent();
+            directorViewSource = (CollectionViewSource)FindResource(nameof(directorViewSource));
+        }
+
+        private void directorSearch_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IMDB.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,22 @@ namespace imdb_app.Pages
     /// </summary>
     public partial class ShortsPage : Page
     {
+        private ImdbContext _context = new ImdbContext();
+        private CollectionViewSource shortsViewSource;
         public ShortsPage()
         {
             InitializeComponent();
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void shortSearch_btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
