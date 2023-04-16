@@ -6,10 +6,38 @@
       xmlns:local="clr-namespace:imdb_app.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="FilmPage">
-
-    <Grid>
-        <TextBlock>Welcome to the film page</TextBlock>
-
-    </Grid>
+      Title="FilmPage"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <CollectionViewSource x:Key="filmViewSource"></CollectionViewSource>
+        <BitmapImage x:Key="search" UriSource="/images/search.png"></BitmapImage>
+    </Page.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Margin" Value="120,20,10,0"/>
+                </Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="0,20,0,0"/>
+                </Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="10,20,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <Label HorizontalAlignment="Right" Content="Search Featured Length Films:"/>
+            <TextBox HorizontalAlignment="Right" x:Name="filmSearch" Width="400"/>
+            <Button HorizontalAlignment="Right" Height="30" x:Name="filmSearch_btn" Click="filmSearch_btn_Click">
+                <Image Source="{StaticResource search}" ></Image>
+            </Button>
+        </StackPanel>
+        <ListView Height="500" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource filmViewSource}}" >
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="local:Titles">
+                    <Grid >
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </Page>

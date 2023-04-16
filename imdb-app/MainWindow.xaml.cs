@@ -60,5 +60,10 @@ namespace imdb_app
             mainFrame.NavigationService.Navigate(ShortsPage);
 
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
