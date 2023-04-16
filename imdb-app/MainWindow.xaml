@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:imdb_app"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Internet Movie Database" Height="600" Width="900">
 
-    </Grid>
+    <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="logo" UriSource="/images/imdb_logo.png"></BitmapImage>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit">
+
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Go To">
+                <MenuItem Header="_Directors">
+
+                </MenuItem>
+                <MenuItem Header="_Films">
+
+                </MenuItem>
+                <MenuItem Header="_Shorts">
+
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="10,20,80,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button HorizontalAlignment="Left" Click="home_btn_Click">
+                    <Image Width="100" Source="{StaticResource logo}"></Image>
+                </Button>
+                <Button Width="100" Height="20" VerticalAlignment="Bottom" Content="Home" x:Name="home_btn" Click="home_btn_Click"></Button>
+                <Button Width="100" Height="20" VerticalAlignment="Bottom" Content="Directors" x:Name="director_btn" Click="director_btn_Click"></Button>
+                <Button Width="100" Height="20" VerticalAlignment="Bottom" Content="Featured Length" x:Name="film_btn" Click="film_btn_Click"></Button>
+                <Button Width="100" Height="20" VerticalAlignment="Bottom" Content="Shorts" x:Name="shorts_btn" Click="shorts_btn_Click"/>
+            </StackPanel>
+            <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Width="Auto" Height="Auto"></Frame>
+        </StackPanel>
+    </DockPanel>
 </Window>
