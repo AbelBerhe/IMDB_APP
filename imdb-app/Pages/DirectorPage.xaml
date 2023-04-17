@@ -36,7 +36,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate DataType="local:Name">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding PrimaryName}"></TextBlock>
+                        <TextBlock Text="{Binding PrimaryName}" Style="{StaticResource TextTitle}"></TextBlock>
                         <Expander x:Name="expander" Header="View Title(s)" Loaded="Expander_Loaded">
                             <ListView ItemsSource="{Binding Titles}" x:Name="titleListView">
                                 <ListView.ItemTemplate>

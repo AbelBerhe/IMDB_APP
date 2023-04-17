@@ -20,6 +20,10 @@ namespace IMDB.Models
                     {
                         years += " - " + DeathYear.ToString();
                     }
+                    else
+                    {
+                        years += " -";
+                    }
                 }
                 return "Directed By: " + PrimaryName + ", " + years;
             }
