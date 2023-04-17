@@ -35,8 +35,7 @@
         <ListView Height="500" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource directorViewSource}}" >
             <ListView.ItemTemplate>
                 <DataTemplate DataType="local:Directors">
-                    <Grid >
-                    </Grid>
+                    <TextBlock Text="{Binding PrimaryName}"></TextBlock>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
