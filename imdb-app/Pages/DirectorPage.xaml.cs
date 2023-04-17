@@ -33,7 +33,6 @@ namespace imdb_app.Pages
             directorViewSource.Source = query.Take(2000).ToList();
         }
 
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var query =
@@ -55,7 +54,7 @@ namespace imdb_app.Pages
                         .Where(p => p.NameId == director.NameId && p.JobCategory == "director")
                         .Join(_context.Titles, p => p.TitleId, t => t.TitleId, (p, t) => t)
                         .Take(10)
-                        .ToList(); // Limit to 10 titles
+                        .ToList();
 
 
                     // Update the ItemsSource of the ListView inside the Expander to the titles
