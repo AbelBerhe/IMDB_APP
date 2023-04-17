@@ -1,4 +1,5 @@
 ﻿using IMDB.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,12 @@ namespace imdb_app.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            _context.Titles.Take(2000).Load();
 
+            var query =
+             from name in _context.Names
+             select name;
+            directorViewSource.Source = query.Take(2000).ToList();
         }
     }
 }
