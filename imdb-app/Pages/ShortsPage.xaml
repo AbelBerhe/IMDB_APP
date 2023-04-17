@@ -31,11 +31,21 @@
                 <Image Source="{StaticResource search}" ></Image>
             </Button>
         </StackPanel>
-        <ListView Height="500" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource shortsViewSource}}" >
+        <ListView Height="500" x:Name="shortSearchResult" ItemsSource="{Binding Source={StaticResource shortsViewSource}}" >
             <ListView.ItemTemplate>
-                <DataTemplate DataType="local:Titles">
-                    <Grid >
-                    </Grid>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding title.PrimaryTitle}"></TextBlock>
+                        <TextBlock Text="{Binding rating.formattedRating}"></TextBlock>
+                        <Expander Header="View Info">
+                            <StackPanel  Width="{Binding ActualWidth, ElementName=shortSearchResult}" Height="Auto">
+                                <TextBlock Text="{Binding title.formattedYear}"></TextBlock>
+                                <TextBlock Text="{Binding title.formattedTime}"></TextBlock>
+                                <TextBlock Text="{Binding name.formattedDirector}"></TextBlock>
+
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
