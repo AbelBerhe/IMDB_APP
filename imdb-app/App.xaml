@@ -36,7 +36,8 @@
        
             <Setter Property="Padding" Value="10"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="Margin" Value="0 0 100 0"></Setter>
+            <Setter Property="Margin" Value="15 0 80 0"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
         </Style>
 
         <Style x:Key="TextBlockBackGroundStyle" TargetType="TextBlock">

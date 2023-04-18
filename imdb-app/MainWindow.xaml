@@ -33,14 +33,14 @@
             </MenuItem>
         </Menu>
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="10">
                 <Button HorizontalAlignment="Left" Click="home_btn_Click" Height="50" Width="50" Style="{StaticResource ButtonStyle}">
                     <Image Width="50" Height="50" Source="{StaticResource logo}"></Image>
                 </Button>
-                <Button  VerticalAlignment="Bottom" Content="Home" x:Name="home_btn" Click="home_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
-                <Button  VerticalAlignment="Bottom" Content="Directors" x:Name="director_btn" Click="director_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
-                <Button  VerticalAlignment="Bottom" Content="Featured Length" x:Name="film_btn" Click="film_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
-                <Button  VerticalAlignment="Bottom" Content="Shorts" x:Name="shorts_btn" Click="shorts_btn_Click" Style="{StaticResource ButtonStyle}"/>
+                <Button  Content="Home" x:Name="home_btn" Click="home_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
+                <Button  Content="Directors" x:Name="director_btn" Click="director_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
+                <Button  Content="Featured Length" x:Name="film_btn" Click="film_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
+                <Button  Content="Shorts" x:Name="shorts_btn" Click="shorts_btn_Click" Style="{StaticResource ButtonStyle}"/>
             </StackPanel>
             <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Width="Auto" Height="Auto"></Frame>
         </StackPanel>
