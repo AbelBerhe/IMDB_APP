@@ -9,7 +9,7 @@ namespace IMDB.Models
 {
     public partial class Title
     {
-        public string FormattedTime
+        public string formattedTime
         {
             get
             {
@@ -17,7 +17,7 @@ namespace IMDB.Models
             }
         }
 
-        public string FormattedYear
+        public string formattedYear
         {
             get
             {
@@ -25,7 +25,7 @@ namespace IMDB.Models
             }
         }
 
-        public int FormattedGenre
+        public int formattedGenre
         {
             get
             {

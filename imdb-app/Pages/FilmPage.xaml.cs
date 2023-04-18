@@ -53,9 +53,9 @@ namespace imdb_app.Pages
                         {
                             Title = nameGroup.Key,
                             Director = nameGroup.Select(t => t.name.formattedDirector).FirstOrDefault(),
-                            Year = nameGroup.Select(t => t.title.FormattedYear).FirstOrDefault(),
-                            Time = nameGroup.Select(t => t.title.FormattedTime).FirstOrDefault(),
-                            Rating = nameGroup.Select(t => t.rating.FormattedRating).FirstOrDefault(),
+                            Year = nameGroup.Select(t => t.title.formattedYear).FirstOrDefault(),
+                            Time = nameGroup.Select(t => t.title.formattedTime).FirstOrDefault(),
+                            Rating = nameGroup.Select(t => t.rating.formattedRating).FirstOrDefault(),
                             Genres = nameGroup.Select(t => t.title.Genres).FirstOrDefault()
 
                         };

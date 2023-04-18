@@ -9,7 +9,7 @@ namespace  IMDB.Models
 {
     public partial class Rating
     {
-        public string FormattedRating
+        public string formattedRating
         {
             get
             {
