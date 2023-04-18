@@ -35,8 +35,8 @@
             <HeaderedContentControl.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Films" FontSize="16" FontWeight="Bold" Width="400" Margin="10 0 0 0" Foreground="White"/>
-                        <TextBlock Text="Rating" FontSize="16" TextAlignment="Right" FontWeight="Bold" Width="100" Foreground="White"/>
+                        <TextBlock Text="Films" FontSize="16" FontWeight="Bold" Width="400" Margin="10 0 0 0" Foreground="#FF1F2B3F"/>
+                        <TextBlock Text="Rating" FontSize="16" TextAlignment="Right" FontWeight="Bold" Width="100" Foreground="#FF1F2B3F"/>
                     </StackPanel>
                 </DataTemplate>
             </HeaderedContentControl.HeaderTemplate>
