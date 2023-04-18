@@ -1,4 +1,5 @@
 ﻿using IMDB.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,12 +34,36 @@ namespace imdb_app.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+         //_context.Titles.Where(title => title.RuntimeMinutes > 45).Take(20000).Load();
+         //filmViewSource.Source = _context.Titles.Local.ToObservableCollection();
 
         }
 
         private void filmSearch_btn_Click(object sender, RoutedEventArgs e)
         {
+            string searchTerm = filmSearch.Text;
+            var query =
+                        from title in _context.Titles
+                        join rating in _context.Ratings on title.TitleId equals rating.TitleId
+                        join principal in _context.Principals on title.TitleId equals principal.TitleId
+                        join name in _context.Names on principal.NameId equals name.NameId
+                        where title.RuntimeMinutes > 45 && rating.AverageRating != null && principal.JobCategory == "director" && title.PrimaryTitle.Contains(searchTerm)
+                        group new { title, rating, name } by title.PrimaryTitle into nameGroup
+                        select new
+                        {
+                            Title = nameGroup.Key,
+                            Director = nameGroup.Select(t => t.name.formattedDirector).FirstOrDefault(),
+                            Year = nameGroup.Select(t => t.title.FormattedYear).FirstOrDefault(),
+                            Time = nameGroup.Select(t => t.title.FormattedTime).FirstOrDefault(),
+                            Rating = nameGroup.Select(t => t.rating.FormattedRating).FirstOrDefault(),
+                            Genres = nameGroup.Select(t => t.title.Genres).FirstOrDefault()
 
+                        };
+
+                    filmViewSource.Source = query.Take(2000).ToList();
         }
     }
 }
+
+
+
