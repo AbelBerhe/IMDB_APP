@@ -6,10 +6,32 @@
       xmlns:local="clr-namespace:imdb_app.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HomePage">
+      Title="HomePage" Loaded="Page_Loaded">
 
-    <Grid>
-        <TextBlock>Welcome to the home page</TextBlock>
+    <Page.Resources>
+        <CollectionViewSource x:Key="homeViewSource"></CollectionViewSource>
+    </Page.Resources>
 
-    </Grid>
+    <StackPanel Margin="0,8,0,0">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Internet Movie Database Application" Style="{StaticResource TextBlockStyle1}"/>
+            <TextBlock Text=" "/>
+            <TextBlock Text="Featured Movies" Style="{StaticResource TextBlockStyle1}"/>
+        </StackPanel>
+
+        <ListView Height="330" ItemsSource="{Binding Source={StaticResource homeViewSource}}"
+                  ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  x:Name="homeListView">
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="local:Titles">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding PrimaryTitle}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackPanel>
+    
 </Page>
