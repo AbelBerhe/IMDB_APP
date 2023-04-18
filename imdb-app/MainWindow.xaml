@@ -16,6 +16,10 @@
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="logo" UriSource="/images/imdb_logo.png"></BitmapImage>
+            <BitmapImage x:Key="close" UriSource="/images/close.png"></BitmapImage>
+            <BitmapImage x:Key="short" UriSource="/images/short.png"></BitmapImage>
+            <BitmapImage x:Key="director" UriSource="/images/director.png"></BitmapImage>
+            <BitmapImage x:Key="movie" UriSource="/images/movie.png"></BitmapImage>
             <LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="AliceBlue" Offset="0"/>
                 <GradientStop Color="#EA8D8D" Offset="1"/>
@@ -27,18 +31,26 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="_Exit" Click="Exit_Click">
-
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource close}"></Image>
+                    </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Go To">
                 <MenuItem Header="_Directors" Click="director_btn_Click">
-
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource director}"></Image>
+                    </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Films" Click="film_btn_Click">
-
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource movie}"></Image>
+                    </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Shorts" Click="shorts_btn_Click">
-
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource short}"></Image>
+                    </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
         </Menu>
