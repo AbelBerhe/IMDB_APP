@@ -71,5 +71,23 @@
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+
+        <Style x:Key="TextBlockStyle2" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#EA8D8D" Offset="0"/>
+                        <GradientStop Color="#A890FE" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        
     </Application.Resources>
 </Application>

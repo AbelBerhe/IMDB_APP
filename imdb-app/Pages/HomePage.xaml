@@ -15,21 +15,21 @@
     <StackPanel Margin="0,8,0,0">
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Internet Movie Database Application" Style="{StaticResource TextBlockStyle1}"/>
-            <TextBlock Text="Featured Movies" Style="{StaticResource TextBlockStyle1}"/>
+            <TextBlock Text="Featured Movies:" Style="{StaticResource TextBlockStyle2}"/>
         </StackPanel>
 
-            <ListView Height="500" x:Name="shortSearchResult" ItemsSource="{Binding Source={StaticResource homeViewSource}}" >
+            <ListView Height="500" ItemsSource="{Binding Source={StaticResource homeViewSource}}" >
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Title}" Style="{StaticResource TextTitle}"></TextBlock>
-                            <TextBlock Text="{Binding Rating}" Style="{StaticResource TextRating}"></TextBlock>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Director}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
-                            <TextBlock Text="{Binding Year}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
-                            <TextBlock Text="{Binding Time}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
+                        <TextBlock Text="{Binding Title}" Style="{StaticResource TextBlockStyle2}"></TextBlock>
+                        <TextBlock Text="{Binding Rating}" Style="{StaticResource TextBlockStyle2}"></TextBlock>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Director}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
+                                <TextBlock Text="{Binding Year}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
+                                <TextBlock Text="{Binding Time}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

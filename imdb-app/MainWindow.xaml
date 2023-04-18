@@ -6,14 +6,17 @@
         xmlns:local="clr-namespace:imdb_app"
         mc:Ignorable="d"
         Title="Internet Movie Database" Height="600" Width="900">
-
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="logo" UriSource="/images/imdb_logo.png"></BitmapImage>
+            <LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="AliceBlue" Offset="0"/>
+                <GradientStop Color="#EA8D8D" Offset="1"/>
+            </LinearGradientBrush>
         </ResourceDictionary>
     </Window.Resources>
 
-    <DockPanel>
+    <DockPanel Background="{StaticResource BackgroundBrush}">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="_Exit" Click="Exit_Click">
@@ -33,9 +36,12 @@
             </MenuItem>
         </Menu>
         <StackPanel Orientation="Vertical">
+            <StackPanel>
+                
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button HorizontalAlignment="Left" Click="home_btn_Click" Height="50" Width="50" Style="{StaticResource ButtonStyle}">
-                    <Image Width="50" Height="50" Source="{StaticResource logo}"></Image>
+                <Button HorizontalAlignment="Left" Click="home_btn_Click" Height="100" Width="100" Style="{StaticResource ButtonStyle}" Margin="20, 10, 20, 0">
+                    <Image Width="100" Height="100" Source="{StaticResource logo}"></Image>
                 </Button>
                 <Button  VerticalAlignment="Bottom" Content="Home" x:Name="home_btn" Click="home_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
                 <Button  VerticalAlignment="Bottom" Content="Directors" x:Name="director_btn" Click="director_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
