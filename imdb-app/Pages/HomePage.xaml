@@ -12,25 +12,20 @@
         <CollectionViewSource x:Key="homeViewSource"></CollectionViewSource>
     </Page.Resources>
 
-    <StackPanel Margin="0,8,0,0">
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="Internet Movie Database Application" Style="{StaticResource TextBlockStyle1}"/>
-            <TextBlock Text=" "/>
-            <TextBlock Text="Featured Movies" Style="{StaticResource TextBlockStyle1}"/>
-        </StackPanel>
-
-        <ListView Height="330" ItemsSource="{Binding Source={StaticResource homeViewSource}}"
-                  ScrollViewer.CanContentScroll="True"
-                  ScrollViewer.VerticalScrollBarVisibility="Visible"
-                  x:Name="homeListView">
+    <StackPanel Margin="100" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Button  VerticalAlignment="Bottom" Content="Movie Roulette" x:Name="rando_btn" Click="rando_btn_Click" Style="{StaticResource BigButton}" ></Button>
+        <ListView ItemsSource="{Binding Source={StaticResource homeViewSource}}">
             <ListView.ItemTemplate>
-                <DataTemplate DataType="local:Titles">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding PrimaryTitle}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="Have you seen:" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Title}" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Director}" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Year}" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Rating}" Style="{StaticResource TextTitle}"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
         </ListView>
     </StackPanel>
     
