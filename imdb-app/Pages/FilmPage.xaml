@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:imdb_app.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="800"
       Title="FilmPage"
       Loaded="Page_Loaded">
     <Page.Resources>
@@ -13,7 +13,7 @@
         <BitmapImage x:Key="search" UriSource="/images/search.png"></BitmapImage>
     </Page.Resources>
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Label}">
                     <Setter Property="Margin" Value="120,20,10,0"/>
@@ -26,18 +26,45 @@
                 </Style>
             </StackPanel.Resources>
             <Label HorizontalAlignment="Right" Content="Search Featured Length Films:"/>
-            <TextBox HorizontalAlignment="Right" x:Name="filmSearch" Width="400"/>
+            <TextBox HorizontalAlignment="Right" x:Name="filmSearch" Width="400" VerticalContentAlignment="Center"/>
             <Button HorizontalAlignment="Right" Height="30" x:Name="filmSearch_btn" Click="filmSearch_btn_Click">
                 <Image Source="{StaticResource search}" ></Image>
             </Button>
         </StackPanel>
-        <ListView Height="500" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource filmViewSource}}" >
+        <ListView Height="400" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource filmViewSource}}" Background="#FF1F2B3F"  AlternationCount="2">
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <!--<Setter Property="Height" Value="40"></Setter>-->
+                    <Setter Property="Width" Value="auto"></Setter>
+                    <Style.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background" Value="Black"/>
+                        </Trigger>
+                        <!--<Trigger Property="ItemsControl.AlternationIndex" Value="2">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>-->
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
-                <DataTemplate DataType="local:Titles">
-                    <Grid >
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+                    <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Title}" Width="400" TextAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding Rating}" Width="100" TextAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                        <Expander Header="info" Foreground="White">
+                            <StackPanel Orientation="Vertical" Height="200" Width="300">
+                                <TextBlock Text="{Binding Director}"></TextBlock>
+                                <TextBlock Text="{Binding Year}"></TextBlock>
+                                <TextBlock Text="{Binding Time}" ></TextBlock>
+                                <TextBlock Text="{Binding Genres}" ></TextBlock>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            
         </ListView>
     </StackPanel>
 </Page>

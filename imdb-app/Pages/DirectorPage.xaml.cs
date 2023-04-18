@@ -50,20 +50,22 @@ namespace imdb_app.Pages
             if (expander != null)
             {
                 Name? director = expander.DataContext as Name;
-
-                // Retrieve the titles associated with the director
-                var titles = _context.Principals
-                    .Where(p => p.NameId == director.NameId && p.JobCategory == "director")
-                    .Join(_context.Titles, p => p.TitleId, t => t.TitleId, (p, t) => t)
-                    .ToList();
-
-                // Update the ItemsSource of the ListView inside the Expander to the titles
-                ListView? titleListView = expander.FindName("titleListView") as ListView;
-                if (titleListView != null)
+                if (director != null)
                 {
-                    titleListView.ItemsSource = titles;
-                }
+                    // Retrieve the titles associated with the director
+                    var titles = _context.Principals
+                        .Where(p => p.NameId == director.NameId && p.JobCategory == "director")
+                        .Join(_context.Titles, p => p.TitleId, t => t.TitleId, (p, t) => new { Title = t, Rating = t.Rating })
+                        .Take(10)
+                        .ToList();
 
+                    // Update the ItemsSource of the ListView inside the Expander to the titles
+                    ListView? titleListView = expander.FindName("titleListView") as ListView;
+                    if (titleListView != null)
+                    {
+                        titleListView.ItemsSource = titles;
+                    }
+                }
             }
         }
     }

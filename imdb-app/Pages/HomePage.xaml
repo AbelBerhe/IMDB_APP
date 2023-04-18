@@ -12,27 +12,21 @@
         <CollectionViewSource x:Key="homeViewSource"></CollectionViewSource>
     </Page.Resources>
 
-    <StackPanel Margin="0,8,0,0">
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="Internet Movie Database Application" Style="{StaticResource TextBlockStyle1}"/>
-            <TextBlock Text="Featured Movies:" Style="{StaticResource TextBlockStyle2}"/>
-        </StackPanel>
-
-            <ListView Height="500" ItemsSource="{Binding Source={StaticResource homeViewSource}}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Title}" Style="{StaticResource TextBlockStyle2}"></TextBlock>
-                        <TextBlock Text="{Binding Rating}" Style="{StaticResource TextBlockStyle2}"></TextBlock>
-                            <StackPanel>
-                                <TextBlock Text="{Binding Director}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
-                                <TextBlock Text="{Binding Year}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
-                                <TextBlock Text="{Binding Time}" Style="{StaticResource TextBlockBackGroundStyle}"></TextBlock>
-                            </StackPanel>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+    <StackPanel Margin="100" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Button  VerticalAlignment="Bottom" Content="Movie Roulette" x:Name="rando_btn" Click="rando_btn_Click" Style="{StaticResource BigButton}" ></Button>
+        <ListView ItemsSource="{Binding Source={StaticResource homeViewSource}}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="Have you seen:" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Title}" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Director}" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Year}" Style="{StaticResource TextTitle}"></TextBlock>
+                        <TextBlock Text="{Binding Rating}" Style="{StaticResource TextTitle}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackPanel>
     
 </Page>
