@@ -43,7 +43,7 @@
                                     <DataTemplate DataType="local:Title">
                                         <StackPanel Width="{Binding ActualWidth, ElementName=titleListView}" Orientation="Horizontal">
                                             <TextBlock Text="{Binding Title.PrimaryTitle}" Style="{StaticResource TextTitle}"/>
-                                            <TextBlock Text="{Binding Rating.AverageRating, TargetNullValue=Rating:NA, StringFormat={} Rating: {0}}" Style="{StaticResource TextRating}"/>                     
+                                            <TextBlock Text="{Binding Rating.AverageRating, StringFormat={}{0}}" Style="{StaticResource TextRating}"/>                     
                                         </StackPanel>
                                     </DataTemplate>
 
