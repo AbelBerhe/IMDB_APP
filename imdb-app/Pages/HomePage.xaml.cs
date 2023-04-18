@@ -1,4 +1,5 @@
 ﻿using IMDB.Data;
+using IMDB.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,10 +32,26 @@ namespace imdb_app.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            _context.Titles.OrderByDescending(t => t.Rating).Take(3).Load();
-            homeViewSource.Source = _context.Titles.Local.ToObservableCollection();
+            var query =
+                from title in _context.Titles
+                join rating in _context.Ratings on title.TitleId equals rating.TitleId
+                join principal in _context.Principals on title.TitleId equals principal.TitleId
+                join name in _context.Names on principal.NameId equals name.NameId
+                where title.RuntimeMinutes > 45 && rating.AverageRating != null && principal.JobCategory == "director"
+                group new { title, rating, name } by title.PrimaryTitle into nameGroup
+                select new
+                {
+                    Title = nameGroup.Key,
+                    Director = nameGroup.Select(t => t.name.formattedDirector).FirstOrDefault(),
+                    Year = nameGroup.Select(t => t.title.formattedYear).FirstOrDefault(),
+                    Time = nameGroup.Select(t => t.title.formattedTime).FirstOrDefault(),
+                    Rating = nameGroup.Select(t => t.rating.formattedRating).FirstOrDefault(),
+                    Genres = nameGroup.Select(t => t.title.Genres).FirstOrDefault()
+
+                };
+
+            homeViewSource.Source = query.Take(3).ToList();
         }
-       
     }
 }
 
