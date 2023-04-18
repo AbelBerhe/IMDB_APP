@@ -36,12 +36,7 @@ namespace imdb_app.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            var query =
-                (from principal in _context.Principals
-                 join name in _context.Names on principal.NameId equals name.NameId
-                 where principal.JobCategory == "director"
-                 select name).Distinct();
-            directorViewSource.Source = query.Take(2000).ToList();
+
         }
 
         private void Expander_Loaded(object sender, RoutedEventArgs e)

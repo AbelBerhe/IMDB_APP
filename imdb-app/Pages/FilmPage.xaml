@@ -25,7 +25,7 @@
                     <Setter Property="Margin" Value="10,20,0,0"/>
                 </Style>
             </StackPanel.Resources>
-            <Label HorizontalAlignment="Right" Content="Search Featured Length Films:" Foreground="white"/>
+            <Label HorizontalAlignment="Right" Content="Search Featured Length Films:" Foreground="#FF1F2B3F" FontWeight="Bold"/>
             <TextBox HorizontalAlignment="Right" x:Name="filmSearch" Width="400" VerticalContentAlignment="Center"/>
             <Button HorizontalAlignment="Right" Height="30" x:Name="filmSearch_btn" Click="filmSearch_btn_Click" Background="White">
                 <Image Source="{StaticResource search}" ></Image>
