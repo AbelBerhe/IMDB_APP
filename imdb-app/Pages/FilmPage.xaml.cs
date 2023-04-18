@@ -43,7 +43,7 @@ namespace imdb_app.Pages
         {
             string searchTerm = filmSearch.Text;
             var query =
-                        from title in _context.Titles
+                        from title in _context.Titles.Take(10000)
                         join rating in _context.Ratings on title.TitleId equals rating.TitleId
                         join principal in _context.Principals on title.TitleId equals principal.TitleId
                         join name in _context.Names on principal.NameId equals name.NameId
@@ -60,7 +60,7 @@ namespace imdb_app.Pages
 
                         };
 
-                    filmViewSource.Source = query.Take(1000).ToList();
+                    filmViewSource.Source = query.ToList();
         }
     }
 }
