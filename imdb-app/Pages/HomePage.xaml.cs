@@ -1,4 +1,5 @@
 ﻿using IMDB.Data;
+using IMDB.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace imdb_app.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+
             homeViewSource.Source = _context.Titles.Local.ToObservableCollection();
         }
 

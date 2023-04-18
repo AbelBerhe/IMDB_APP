@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IMDB.Models
+
 {
     public partial class Rating
     {
