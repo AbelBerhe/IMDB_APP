@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using IMDB.Models;
+using imdb_app.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace IMDB.Data;
+namespace imdb_app.Data;
 
 public partial class ImdbContext : DbContext
 {

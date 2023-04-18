@@ -31,40 +31,35 @@
                 <Image Source="{StaticResource search}" ></Image>
             </Button>
         </StackPanel>
-        <ListView Height="400" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource filmViewSource}}" Background="#FF1F2B3F"  AlternationCount="2">
-
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="Foreground" Value="White"></Setter>
-                    <!--<Setter Property="Height" Value="40"></Setter>-->
-                    <Setter Property="Width" Value="auto"></Setter>
-                    <Style.Triggers>
-                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter Property="Background" Value="Black"/>
-                        </Trigger>
-                        <!--<Trigger Property="ItemsControl.AlternationIndex" Value="2">
-                            <Setter Property="Background" Value="Gray"/>
-                        </Trigger>-->
-                    </Style.Triggers>
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.ItemTemplate>
-                    <DataTemplate>
+        <HeaderedContentControl>
+            <HeaderedContentControl.HeaderTemplate>
+                <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Title}" Width="400" TextAlignment="Left"></TextBlock>
-                        <TextBlock Text="{Binding Rating}" Width="100" TextAlignment="Right" Margin="0 0 10 0"></TextBlock>
-                        <Expander Header="info" Foreground="White">
-                            <StackPanel Orientation="Vertical" Height="200" Width="300">
-                                <TextBlock Text="{Binding Director}"></TextBlock>
-                                <TextBlock Text="{Binding Year}"></TextBlock>
-                                <TextBlock Text="{Binding Time}" ></TextBlock>
-                                <TextBlock Text="{Binding Genres}" ></TextBlock>
-                            </StackPanel>
-                        </Expander>
+                        <TextBlock Text="Films" FontSize="16" FontWeight="Bold" Width="400" Margin="10 0 0 0" Foreground="White"/>
+                        <TextBlock Text="Rating" FontSize="16" TextAlignment="Right" FontWeight="Bold" Width="100" Foreground="White"/>
                     </StackPanel>
+                </DataTemplate>
+            </HeaderedContentControl.HeaderTemplate>
+            <ListView Height="400" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource filmViewSource}}" Background="#FF1F2B3F"  AlternationCount="2" ItemContainerStyle="{StaticResource listViewStyle}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Title}" Width="400" TextAlignment="Left"></TextBlock>
+                            <TextBlock Text="{Binding Rating}" Width="100" TextAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                            <Expander Header="info" Foreground="White">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Director}"></TextBlock>
+                                    <TextBlock Text="{Binding Year}"></TextBlock>
+                                    <TextBlock Text="{Binding Time}" ></TextBlock>
+                                    <TextBlock Text="{Binding Genres}" ></TextBlock>
+                                </StackPanel>
+                            </Expander>
+                        </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            
-        </ListView>
+
+            </ListView>
+        </HeaderedContentControl>
+      
     </StackPanel>
 </Page>

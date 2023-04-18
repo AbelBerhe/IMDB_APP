@@ -117,6 +117,15 @@
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
-        
+
+        <Style x:Key="listViewStyle" TargetType="ListViewItem">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Width" Value="auto"></Setter>
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

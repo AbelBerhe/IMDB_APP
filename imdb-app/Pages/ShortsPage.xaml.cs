@@ -1,5 +1,5 @@
-﻿using IMDB.Data;
-using IMDB.Models;
+﻿using imdb_app.Data;
+using imdb_app.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

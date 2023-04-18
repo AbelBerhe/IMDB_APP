@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IMDB.Models
+namespace imdb_app.Models
 {
     public partial class Principal
     {
