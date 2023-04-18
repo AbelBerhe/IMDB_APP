@@ -25,28 +25,5 @@ namespace IMDB.Models
             }
         }
 
-        public int formattedGenre
-        {
-            get
-            {
-                var gen = 0;
-
-                foreach (Genre genre in Genres)
-                {
-                    gen += 1;
-                }
-                return gen;
-            }
-        }
-
-
-               foreach (Genre genre in Genres)
-                {
-                    gen += 1;
-                }
-               return gen;
-            }
-        }
-
     }
 }
