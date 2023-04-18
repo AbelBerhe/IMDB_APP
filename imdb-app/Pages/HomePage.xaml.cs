@@ -40,6 +40,7 @@ namespace imdb_app.Pages
         private void rando_btn_Click(object sender, RoutedEventArgs e)
         {
             var query =
+
                  from title in _context.Titles
                  join rating in _context.Ratings on title.TitleId equals rating.TitleId
                  join principal in _context.Principals on title.TitleId equals principal.TitleId
@@ -57,7 +58,6 @@ namespace imdb_app.Pages
                  };
 
             homeViewSource.Source = query.OrderBy(x => Guid.NewGuid()).Take(1).ToList();
-
         }
     }
 }
