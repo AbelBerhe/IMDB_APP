@@ -32,13 +32,13 @@
                 <Image Source="{StaticResource search}" ></Image>
             </Button>
         </StackPanel>
-        <ListView Height="500" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource directorViewSource}}" >
+        <ListView Height="500" x:Name="directorSearchResult" ItemsSource="{Binding Source={StaticResource directorViewSource}}" AlternationCount="2" ItemContainerStyle="{StaticResource listViewStyle}" Background="#FF1F2B3F">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="local:Name">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding PrimaryName}" Style="{StaticResource TextTitle}"></TextBlock>
-                        <Expander x:Name="expander" Header="View Title(s)" Loaded="Expander_Loaded">
-                            <ListView ItemsSource="{Binding Titles}" x:Name="titleListView" Width="350">
+                        <Expander x:Name="expander" Header="View Title(s)" Loaded="Expander_Loaded" Foreground="White">
+                            <ListView ItemsSource="{Binding Titles}" x:Name="titleListView" Width="350" AlternationCount="2" ItemContainerStyle="{StaticResource listViewStyle}" Background="#FF1F2B3F">
                                 <ListView.ItemTemplate>
                                     <DataTemplate DataType="local:Title">
                                         <StackPanel Width="{Binding ActualWidth, ElementName=titleListView}" Orientation="Horizontal">

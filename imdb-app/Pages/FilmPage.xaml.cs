@@ -1,4 +1,4 @@
-﻿using IMDB.Data;
+﻿using imdb_app.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace imdb_app.Pages
 
                         };
 
-                    filmViewSource.Source = query.Take(2000).ToList();
+                    filmViewSource.Source = query.Take(1000).ToList();
         }
     }
 }

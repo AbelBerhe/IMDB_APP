@@ -1,4 +1,4 @@
-﻿namespace IMDB.Models
+﻿namespace imdb_app.Models
 {
     public partial class Title
     {
@@ -6,7 +6,7 @@
         {
             get
             {
-                return RuntimeMinutes.ToString() + " minutes";
+                return "Length: " + RuntimeMinutes.ToString() + " minutes";
             }
         }
 
