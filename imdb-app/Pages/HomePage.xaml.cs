@@ -21,7 +21,7 @@ namespace imdb_app.Pages
 {
     public partial class HomePage : Page
     {
-        private ImdbContext _context = new ImdbContext();
+        private ImdbContext _context;
         private CollectionViewSource homeViewSource;
 
         public HomePage()
@@ -32,20 +32,20 @@ namespace imdb_app.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
+            _context = null;
+            _context = new ImdbContext();
             homeViewSource.Source = _context.Titles.Local.ToObservableCollection();
         }
 
         private void rando_btn_Click(object sender, RoutedEventArgs e)
         {
-            _context.Titles.Load();
-
             var query =
+
                  from title in _context.Titles
                  join rating in _context.Ratings on title.TitleId equals rating.TitleId
                  join principal in _context.Principals on title.TitleId equals principal.TitleId
                  join name in _context.Names on principal.NameId equals name.NameId
-                 where rating.AverageRating != null && principal.JobCategory == "director"
+                 where rating.AverageRating != null && principal.JobCategory == "director" && rating.AverageRating > 7
                  group new { title, rating, name } by title.PrimaryTitle into nameGroup
                  select new
                  {
@@ -58,7 +58,6 @@ namespace imdb_app.Pages
                  };
 
             homeViewSource.Source = query.OrderBy(x => Guid.NewGuid()).Take(1).ToList();
-
         }
     }
 }

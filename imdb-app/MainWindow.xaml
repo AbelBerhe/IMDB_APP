@@ -13,14 +13,17 @@
             <GradientStop Color="LightSkyBlue" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="logo" UriSource="/images/imdb_logo.png"></BitmapImage>
+            <LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="AliceBlue" Offset="0"/>
+                <GradientStop Color="#EA8D8D" Offset="1"/>
+            </LinearGradientBrush>
         </ResourceDictionary>
     </Window.Resources>
 
-    <DockPanel>
+    <DockPanel Background="{StaticResource BackgroundBrush}">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="_Exit" Click="Exit_Click">
@@ -41,7 +44,6 @@
         </Menu>
         <StackPanel Orientation="Vertical">
             <StackPanel>
-
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button HorizontalAlignment="Left" Click="home_btn_Click" Height="100" Width="100" Style="{StaticResource ButtonStyle}" Margin="20, 10, 20, 0">
