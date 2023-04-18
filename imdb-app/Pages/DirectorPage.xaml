@@ -38,13 +38,17 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding PrimaryName}"></TextBlock>
                         <Expander x:Name="expander" Header="View Title(s)" Loaded="Expander_Loaded">
-                            <ListView ItemsSource="{Binding Titles}" x:Name="titleListView" Width="auto">
+                            <ListView ItemsSource="{Binding Titles}" x:Name="titleListView" Width="350">
                                 <ListView.ItemTemplate>
-                                    <DataTemplate>
+                                    <DataTemplate DataType="local:Title">
                                         <StackPanel Width="{Binding ActualWidth, ElementName=titleListView}" Orientation="Horizontal">
-                                            <TextBlock Text="{Binding PrimaryTitle}" />
+                                            <TextBlock>
+                                                <Run Text="{Binding Title.PrimaryTitle}" />  
+                                                <Run Text="{Binding Rating.AverageRating, TargetNullValue=Rating:NA, StringFormat={} Rating: {0}}" />
+                                            </TextBlock>
                                         </StackPanel>
                                     </DataTemplate>
+
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Expander>
