@@ -26,9 +26,9 @@
                     <Setter Property="Margin" Value="10,20,0,0"/>
                 </Style>
             </StackPanel.Resources>
-            <Label HorizontalAlignment="Right" Content="Search Directors:"/>
+            <Label HorizontalAlignment="Right" Content="Search Directors:" Foreground="white"/>
             <TextBox HorizontalAlignment="Right" x:Name="directorSearch" Width="400"/>
-            <Button HorizontalAlignment="Right" Height="30" x:Name="directorSearch_btn" Click="directorSearch_btn_Click">
+            <Button HorizontalAlignment="Right" Height="30" x:Name="directorSearch_btn" Click="directorSearch_btn_Click" Background="White">
                 <Image Source="{StaticResource search}" ></Image>
             </Button>
         </StackPanel>

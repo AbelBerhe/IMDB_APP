@@ -11,6 +11,26 @@
     <Page.Resources>
         <CollectionViewSource x:Key="homeViewSource"></CollectionViewSource>
     </Page.Resources>
+    <StackPanel Margin="0,8,0,0">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Welcome to IMDb!" Style="{StaticResource TextBlockStyle1}"/>
+        </StackPanel>
+        <StackPanel Margin="100" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Button  VerticalAlignment="Bottom" Content="Movie Roulette" x:Name="rando_btn" Click="rando_btn_Click" Style="{StaticResource BigButton}" ></Button>
+            <ListView ItemsSource="{Binding Source={StaticResource homeViewSource}}" Background="#FF1F2B3F">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="Have you seen:" Style="{StaticResource TextTitle}"></TextBlock>
+                            <TextBlock Text="{Binding Title}" Style="{StaticResource TextTitle}"></TextBlock>
+                            <TextBlock Text="{Binding Director}" Style="{StaticResource TextTitle}"></TextBlock>
+                            <TextBlock Text="{Binding Year}" Style="{StaticResource TextTitle}"></TextBlock>
+                            <TextBlock Text="{Binding Rating}" Style="{StaticResource TextTitle}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
 
     <StackPanel Margin="100" HorizontalAlignment="Center" VerticalAlignment="Center" >
         <Button  VerticalAlignment="Bottom" Content="Movie Roulette" x:Name="rando_btn" Click="rando_btn_Click" Style="{StaticResource BigButton}" ></Button>
@@ -28,5 +48,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackPanel>
-    
 </Page>

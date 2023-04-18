@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:imdb_app"
         mc:Ignorable="d"
         Title="Internet Movie Database" Height="600" Width="900">
+
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FF1F2B3F"  Offset="0.1"/>
+            <GradientStop Color="LightSkyBlue" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="logo" UriSource="/images/imdb_logo.png"></BitmapImage>
@@ -37,16 +44,15 @@
         </Menu>
         <StackPanel Orientation="Vertical">
             <StackPanel>
-                
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button HorizontalAlignment="Left" Click="home_btn_Click" Height="100" Width="100" Style="{StaticResource ButtonStyle}" Margin="20, 10, 20, 0">
                     <Image Width="100" Height="100" Source="{StaticResource logo}"></Image>
                 </Button>
-                <Button  Content="Home" x:Name="home_btn" Click="home_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
-                <Button  Content="Directors" x:Name="director_btn" Click="director_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
-                <Button  Content="Featured Length" x:Name="film_btn" Click="film_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
-                <Button  Content="Shorts" x:Name="shorts_btn" Click="shorts_btn_Click" Style="{StaticResource ButtonStyle}"/>
+                <Button  VerticalAlignment="Center" Content="Home" x:Name="home_btn" Click="home_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
+                <Button  VerticalAlignment="Center" Content="Directors" x:Name="director_btn" Click="director_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
+                <Button  VerticalAlignment="Center" Content="Featured Length" x:Name="film_btn" Click="film_btn_Click" Style="{StaticResource ButtonStyle}"></Button>
+                <Button  VerticalAlignment="Center" Content="Shorts" x:Name="shorts_btn" Click="shorts_btn_Click" Style="{StaticResource ButtonStyle}"/>
             </StackPanel>
             <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Width="Auto" Height="Auto"></Frame>
         </StackPanel>

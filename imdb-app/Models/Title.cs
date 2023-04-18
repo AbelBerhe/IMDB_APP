@@ -16,7 +16,6 @@
             {
                 return "Year: " + StartYear.ToString();
             }
-        }
-
+        } 
     }
 }

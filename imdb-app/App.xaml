@@ -7,6 +7,7 @@
         <Style x:Key="TextTitle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
         </Style>
         <Style x:Key="TextRating" TargetType="TextBlock">
             <Setter Property="FontSize" Value="14"></Setter>
@@ -25,8 +26,8 @@
                             <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Border.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                    <GradientStop Color="#EA8D8D" Offset="0"/>
-                                    <GradientStop Color="#A890FE" Offset="1"/>
+                                    <GradientStop Color="#FF1F2B3F" Offset="1"/>
+                                    <GradientStop Color="#FF1F2B3F" Offset="1"/>
                                 </LinearGradientBrush>
                             </Border.Background>
                         </Border>
@@ -55,8 +56,8 @@
                             <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Border.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                    <GradientStop Color="#EA8D8D" Offset="0"/>
-                                    <GradientStop Color="#A890FE" Offset="1"/>
+                                    <GradientStop Color="#FF1F2B3F" Offset="1"/>
+                                    <GradientStop Color="#FF1F2B3F" Offset="1"/>
                                 </LinearGradientBrush>
                             </Border.Background>
                         </Border>
@@ -68,30 +69,13 @@
             <Setter Property="Foreground" Value="White"></Setter>
         </Style>
 
-        <Style x:Key="TextBlockBackGroundStyle" TargetType="TextBlock">
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Color="#EA8D8D" Offset="0"/>
-                        <GradientStop Color="#A890FE" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Height" Value="25"/>
-
-        </Style>
-
         <Style x:Key="TextBlockStyle1" TargetType="TextBlock">
             <Setter Property="Margin" Value="10"/>
             <Setter Property="Foreground">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Color="#EA8D8D" Offset="0"/>
-                        <GradientStop Color="#A890FE" Offset="1"/>
+                        <GradientStop Color="LightSkyBlue" Offset="0"/>
+                        <GradientStop Color="AliceBlue" Offset="1"/>
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
